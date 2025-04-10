@@ -22,7 +22,6 @@ const ProductAll = () => {
     <div>
       <Container>
         <Row>
-          {/* {ProductList.map(menu=>(<Col lg={3}><ProductCard item={menu}/></Col>))} */}
           {ProductList.map(menu=>(
             <Col lg={3}>
               <ProductCard item={menu}/>
