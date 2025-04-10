@@ -7,7 +7,7 @@ const ProductAll = () => {
   const [ProductList, setProductList]=useState([]);
 
   const getProducts=async()=>{
-    let url='http://localhost:5000/products';
+    let url='https://my-json-server.typicode.com/LEEJAEWOO-0718/hnm-react-router-practice/products';
     let response=await fetch(url);
     let data=await response.json();
     console.log('data:', data);

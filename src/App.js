@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import PrivateRoute from './route/PrivateRoute';
 
 function App() {
-  const[authenticate, setAuthenticate]=useState(false);
+  const[authenticate, setAuthenticate]=useState(true);  //false
   useEffect(()=>{
     console.log('setAuthenticate:', setAuthenticate);
   },[setAuthenticate]);
