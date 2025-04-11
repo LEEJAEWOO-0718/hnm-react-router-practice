@@ -31,7 +31,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     <div>
       <div className='login-button' onClick={authenticate ? goToLogout : goToLogin}>
         <FontAwesomeIcon className='login-icon' icon={faUser} />
-        <div>{authenticate ? "로그아웃" : "로그인"}</div>
+        <div>{authenticate ? "로그아웃<-" : "->로그인"}</div>
       </div>
       <div onClick={goToHome} className='nav-section'>
         <img width={100} src='https://play-lh.googleusercontent.com/BDtWjjKfOrhvqeBET291anITXe3KDnycL0mRJMz0pwPXOEdVKVHYYDGXMVGEzrVbSOA=w240-h480-rw' className='logo-image'/>
