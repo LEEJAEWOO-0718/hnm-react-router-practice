@@ -75,13 +75,57 @@
     margin-top: 10px;
 }
 
-@media screen and (max-width: 1200px) {
-    .menu-search {
-        display: none;
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    bottom: 140px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    padding: 60px 20px;
+    animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }
 
-@media screen and (max-width: 490px) {
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+@media screen and (max-width: 500px) {
     .menu-list {
         display: none;
     }
