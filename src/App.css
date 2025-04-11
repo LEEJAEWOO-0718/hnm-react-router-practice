@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.logo-image {
+    cursor: pointer;
+}
+
 .menu-list {
     display: flex;
     list-style-type: none;

@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({authenticate, setAuthenticate}) => {
+  // const[authenticate, setAuthenticate]=useState(false);
   const menulist=['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
-  const navigate=useNavigate()
+  const navigate=useNavigate();
   const goToLogin=()=>{
-    //
-    navigate('/login')
-  }
+    navigate("/login");
+  };
+  const goToHome =()=>{
+    navigate('/')
+  };
+
+  const goToLogout = () => {
+    setAuthenticate(false);
+    navigate("/");
+  };
+  
+  const search=(e)=>{
+    if(e.key === "Enter") {
+      let keyword=e.target.value;
+      navigate(`/?q=${keyword}`);
+    }
+  };
 
   return (
     <div>
-      <div className='login-button' onClick={goToLogin}>
+      <div className='login-button' onClick={authenticate ? goToLogout : goToLogin}>
         <FontAwesomeIcon className='login-icon' icon={faUser} />
-        <div>로그인</div>
+        <div>{authenticate ? "로그아웃" : "로그인"}</div>
       </div>
-      <div className='nav-section'>
-        <img width={100} src='https://play-lh.googleusercontent.com/BDtWjjKfOrhvqeBET291anITXe3KDnycL0mRJMz0pwPXOEdVKVHYYDGXMVGEzrVbSOA=w240-h480-rw'/>
+      <div onClick={goToHome} className='nav-section'>
+        <img width={100} src='https://play-lh.googleusercontent.com/BDtWjjKfOrhvqeBET291anITXe3KDnycL0mRJMz0pwPXOEdVKVHYYDGXMVGEzrVbSOA=w240-h480-rw' className='logo-image'/>
       </div>
       <div className='menu-area'>
         <ul className='menu-list'>
@@ -27,7 +42,7 @@ const Navbar = () => {
         </ul>
         <div className='menu-search'>
           <FontAwesomeIcon className='search-icon' icon={faSearch}/>
-          <input type='text' placeholder="상품 검색" className="search-input"/>
+          <input type='text' onKeyDown={(e)=>search(e)} placeholder="상품 검색" className="search-input"/>
         </div>
       </div>
     </div>
