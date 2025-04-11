@@ -27,6 +27,10 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     }
   };
 
+  const toggleSideBar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div>
       <div className='login-button' onClick={authenticate ? goToLogout : goToLogin}>
@@ -37,6 +41,12 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         <img width={100} src='https://play-lh.googleusercontent.com/BDtWjjKfOrhvqeBET291anITXe3KDnycL0mRJMz0pwPXOEdVKVHYYDGXMVGEzrVbSOA=w240-h480-rw' className='logo-image'/>
       </div>
       <div className='menu-area'>
+
+        {/* 햄버거버튼 */}
+        <button className="hamburger" onClick={toggleSideBar}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+
         <ul className='menu-list'>
           {menulist.map(menu=><li>{menu}</li>)}
         </ul>
