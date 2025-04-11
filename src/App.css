@@ -75,14 +75,30 @@
     margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-    .login-area {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+@media screen and (max-width: 1200px) {
+    .menu-search {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .menu-list {
+        display: none;
     }
 
-    .search-area {
-        position: unset;
+    .hamburger {
+        display: block;
+    }
+
+    .product-img img {
+        max-width: 400px;
+    }
+    .product-detail-info .price {
+        margin-bottom: 30px;
+    }
+
+    .product-add-btn {
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
 }
