@@ -74,3 +74,15 @@
     width: 100%;
     margin-top: 10px;
 }
+
+@media (max-width: 600px) {
+    .login-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-area {
+        position: unset;
+    }
+}
